@@ -3,12 +3,14 @@ def badge_maker(speakers)
 end
 
 def batch_badge_creator(names)
-  names.collect do |name|
-    name[0] = badge_maker(name)
+  badge_messages = Array.new
+  names.each do |i|
+    badge = badge_maker(i)
+    badge_messages << badge
   end
-  return name
-
+  return badge_messages
 end
+
 
 
 def assign_rooms(speakers)
